@@ -39,6 +39,14 @@ namespace WrightBrothersApi.Controllers
                 Year = 1908,
                 Description = "The first commercially successful airplane.",
                 RangeInKm = 40
+            }            ,
+            new Plane
+            {
+                Id = 4,
+                Name = "Wright Model A",
+                Year = 1908,
+                Description = "The first commercially successful airplane.",
+                RangeInKm = 40
             }
         };
 
@@ -53,6 +61,7 @@ namespace WrightBrothersApi.Controllers
         [HttpGet("{id}")]
         public ActionResult<Plane> GetById(int id)
         {
+        _logger.LogInformation("GET by id ✈✈✈ {id}  ✈✈✈");
             var plane = Planes.Find(p => p.Id == id);
 
             if (plane == null)
